@@ -1,0 +1,14 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville');
+$primary-font: 'Libre Baskerville', serif;
+
+// Color
+$white : #fff;
+$black : #333;
+$light-grey : #f1f1f3;
+
+// Variables
+@mixin shadowBox {
+    box-shadow: 0px 1px 3px 1px rgba($black, 0.6);
+    padding: 1em;
+}

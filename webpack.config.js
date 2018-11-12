@@ -4,14 +4,23 @@ const htmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-    mode: 'development',
-    entry: './src/app.js',
+    entry: './src/app.jsx',
     output: {
         filename: 'build.js',
-        path: path.resolve(__dirname, 'tmp')
+        path: path.resolve(__dirname, 'dist')
     },
     module: {
         rules: [
+            {
+                test: /\.jsx$/,
+                loader: 'babel-loader',
+                options: {
+                    presets: [
+                       '@babel/preset-env', 
+                       '@babel/preset-react'
+                    ]
+                  }
+            },
             {
                 test: /\.scss$/,
                 use: [
@@ -23,14 +32,15 @@ module.exports = {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin(['build']),
+        new CleanWebpackPlugin(['dist']),
         new htmlWebpackPlugin({
-            title: 'test',
-            template: './src/templates/main.html'
+            title: 'Joel Shaw Photography',
+            template: './src/assets/templates/main.html',
+            minify: true
         })
     ],
     devServer: {
         port: 3000,
-        contentBase: 'tmp'
+        contentBase: 'dist'
     }
 };
