@@ -1,5 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
+const htmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     mode: 'development',
@@ -19,8 +21,15 @@ module.exports = {
             }
         ]
     },
+    plugins: [
+        new CleanWebpackPlugin(['build']),
+        new htmlWebpackPlugin({
+            template: './src/assets/templates/main.html',
+            title: 'test'
+        })
+    ],
     devServer: {
         port: 3000,
-        contentBase: 'build'
+        contentBase: 'tmp'
     }
 };
