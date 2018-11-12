@@ -9,7 +9,7 @@
     padding: 0;
 }
 body {
-    background: $light-grey;
+    background: $white;
     font-family: $primary-font;
 }
 
@@ -18,9 +18,58 @@ body {
     width: 98%;
 }
 
-#hero__image {
-    margin: 1em auto;
-    width: 80%;
-    height: 500px;
-    @include shadowBox;
+#hero__section {
+    position: relative;
+    top: 120px;
+    margin: 0 auto;
+    width: 70%;
+    height: 370px;
+    background: $black;
+    transform: skew(-3deg);
+
+
+    #hero__image {
+        position: relative;
+        z-index: 2;
+        float: right;
+        background: url('https://joelshaw.nyc3.cdn.digitaloceanspaces.com/photos/2018/bands/deau-eyes/IMG_0969.jpg') center;
+        background-size: cover;
+        top: -40px;
+        right: 50px;
+        width: 350px;
+        height: 450px;
+        margin: 0;
+        transform: skew(3deg);
+        @include shadowBox;
+    }
+
+    #hero__text {
+        position: relative;
+        z-index: 1;
+        left: 50px;
+        top: 25px;
+        float: left;
+        color: $white;
+        line-height: 2.2em;
+        margin: 3em 0;
+        transform: skew(3deg);
+        height: 250px;
+        width: 400px;
+
+        h2 {
+            font-family: $secondary-font;
+            font-size: 2.5em;
+            text-transform: uppercase;
+            padding-bottom: 1em;
+            margin-bottom: 1em;
+            &:after {
+                content: "";
+                display: block;
+                position: relative;
+                width: 150px;
+                top: 20px;
+                border-bottom: 1px solid rgba($white, 0.5);
+            }
+        }
+    }
 }
