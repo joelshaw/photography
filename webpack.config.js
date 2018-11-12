@@ -13,10 +13,11 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.css$/,
+                test: /\.scss$/,
                 use: [
                     'style-loader',
-                    'css-loader'
+                    'css-loader',
+                    'sass-loader'
                 ]
             }
         ]
@@ -24,8 +25,8 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(['build']),
         new htmlWebpackPlugin({
-            template: './src/assets/templates/main.html',
-            title: 'test'
+            title: 'test',
+            template: './src/templates/main.html'
         })
     ],
     devServer: {
