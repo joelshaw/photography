@@ -13,16 +13,47 @@ body {
     font-family: $primary-font;
 }
 
-#wrapper {
+.wrapper {
     margin: 0 auto;
-    width: 98%;
+    width: 85%;
+}
+
+.menu__section {
+    position: fixed;
+    top: 4px;
+    left: 4px;
+
+    .hamburger {
+        float: left;
+        background: $black;
+        color: $white;
+        width: 50px;
+        height: 50px;
+
+        .menu__bar {
+            display: block;
+            position: relative;
+            top: 6px;
+            width: 50%;
+            height: 2px;
+            margin: 0.5em auto;
+            border-bottom: 1px solid lighten($white, 70%);
+        }
+    }
+    .menu__label {
+        float: right;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-family: $secondary-font;
+        padding: 1.2em 1em;
+    }
 }
 
 #hero__section {
     position: relative;
     top: 120px;
     margin: 0 auto;
-    width: 70%;
+    width: 84%;
     height: 370px;
     background: $black;
     transform: skew(-3deg);

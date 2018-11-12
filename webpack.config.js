@@ -1,7 +1,8 @@
 const webpack = require('webpack');
 const path = require('path');
-const htmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ImageWebpackPlugin = require('imagemin-webpack-plugin').default;
+const htmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: './src/app.jsx',
@@ -37,6 +38,12 @@ module.exports = {
             title: 'Joel Shaw Photography',
             template: './src/assets/templates/main.html',
             minify: true
+        }),
+        new ImageWebpackPlugin({
+            disable: process.env.NODE_ENV !== 'production',
+            pngquant: {
+                quality: '95-100'
+            }
         })
     ],
     devServer: {
