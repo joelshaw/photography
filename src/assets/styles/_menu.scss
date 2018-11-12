@@ -1,0 +1,67 @@
+.navigation__section {
+    position: absolute;
+    overflow: hidden;
+    z-index: 9999;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 98.2vw;
+    height: 96.5vh;
+    font-family: $secondary-font;
+    background: $white;
+    color: $white;
+    padding: 1em;
+
+    .navigation__container {
+        background: darken($black, 100%);
+        margin: 0 auto;
+        height: 100%;
+        width: 100%;
+        .close__btn {
+            position: relative;
+            font-family: sans-serif;
+            top: 10px;
+            right: 20px;
+            float: right;
+            font-size: 2em;
+        }
+        .nav__left {
+            float: left;
+            text-align: center;
+            width: 30%;
+            padding: 2.5em 2em;
+            ul {
+                li {
+                    text-transform: uppercase;
+                    list-style: none;
+                    padding: 1.5em;
+                    font-size: 2.5em;
+                    &:after {
+                        content: "";
+                        display: block;
+                        width: 0px;
+                        transition: 0.3s linear all;
+                        border-bottom: 2px solid transparent;   
+                    }
+                    &:hover {
+                        &:after {
+                            content: "";
+                            margin: 0 auto;
+                            display: block;
+                            width: 80px;
+                            border-bottom: 2px solid $white;   
+                        }
+                    }
+                }
+            }
+        }
+        .nav__right {
+            float: right;
+            width: 65%;
+            height: 100%;
+            background: url('https://joelshaw.nyc3.cdn.digitaloceanspaces.com/photos/2018/bands/righter/IMG_0054-mark.jpg') bottom center;
+            background-size: cover;
+        }
+    }
+}

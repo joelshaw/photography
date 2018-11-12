@@ -4,16 +4,24 @@ export default class Menu extends React.Component {
     render() {
         return (
             <div>
-                <section className="menu__section">
-                    <div className="hamburger">
-                        <span className="menu__bar"></span>
-                        <span className="menu__bar"></span>
-                        <span className="menu__bar"></span>
+               <section className="navigation__section">
+                    <div className="navigation__container">
+                    <div className="close__btn" aria-label="Close Menu">X</div>
+                        <section className="nav__left">
+                            <nav>
+                                <ul>
+                                    <li>Home</li>
+                                    <li>Gallery</li>
+                                    <li>About</li>
+                                    <li>Contact</li>
+                                </ul>
+                            </nav>
+                        </section>
+                        <section className="nav__right">
+                            
+                        </section>
                     </div>
-                    <div className="menu__label">
-                        <p>Navigation</p>
-                    </div>
-                </section>
+               </section>
             </div>
         );
     }
