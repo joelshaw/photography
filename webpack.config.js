@@ -23,6 +23,17 @@ module.exports = {
                   }
             },
             {
+                test: /\.(png|jpg|gif)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            limit: 8192
+                        }
+                    }
+                ]
+            },
+            {
                 test: /\.scss$/,
                 use: [
                     'style-loader',
@@ -42,7 +53,7 @@ module.exports = {
         new ImageWebpackPlugin({
             disable: process.env.NODE_ENV !== 'production',
             pngquant: {
-                quality: '95-100'
+                quality: '50-70'
             }
         })
     ],
